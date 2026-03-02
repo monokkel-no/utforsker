@@ -30,12 +30,11 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Mark server bundle as ESM
-        run: echo '{"type":"module"}' > apps/web/dist/server/package.json
-
       - name: Deploy to Netlify
-        working-directory: apps/web
-        run: pnpm --package=netlify-cli dlx netlify deploy --prod --dir ${{ github.workspace }}/apps/web/dist/client --functions ${{ github.workspace }}/apps/web/dist/server
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './apps/web/dist'
+          production-branch: main
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
