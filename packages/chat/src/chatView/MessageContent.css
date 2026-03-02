@@ -1,0 +1,124 @@
+.md {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* Collapse top/bottom margin of first and last block elements */
+.md > :first-child {
+  margin-top: 0;
+}
+.md > :last-child {
+  margin-bottom: 0;
+}
+
+.md p {
+  margin: 0.5em 0;
+}
+
+.md h1,
+.md h2,
+.md h3,
+.md h4 {
+  margin: 0.75em 0 0.25em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.md h1 {
+  font-size: 1.25em;
+}
+.md h2 {
+  font-size: 1.1em;
+}
+.md h3 {
+  font-size: 1em;
+}
+
+.md ul,
+.md ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+.md li {
+  margin: 0.2em 0;
+}
+
+.md a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.85;
+}
+.md a:hover {
+  opacity: 1;
+}
+
+/* Inline code */
+.md :not(pre) > code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-size: 0.875em;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Code blocks */
+.md pre {
+  margin: 0.75em 0;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.875em;
+}
+.md pre code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  background: none;
+  padding: 0;
+}
+
+/* Tables */
+.md table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.9em;
+  width: 100%;
+}
+.md th,
+.md td {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 6px 10px;
+  text-align: left;
+}
+.md th {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Blockquotes */
+.md blockquote {
+  margin: 0.5em 0;
+  padding: 0.1em 0 0.1em 0.75em;
+  border-left: 3px solid rgba(0, 0, 0, 0.25);
+  opacity: 0.85;
+}
+
+/* Images / media */
+.md img,
+.md video {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 0.5em 0;
+  display: block;
+}
+
+/* KaTeX overrides — prevent it from overflowing the bubble */
+.md .katex-display {
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+/* Horizontal rules */
+.md hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0.75em 0;
+}

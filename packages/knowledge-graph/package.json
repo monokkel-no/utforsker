@@ -1,0 +1,22 @@
+{
+  "name": "@repo/knowledge-graph",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/chat": "workspace:*",
+    "@xyflow/react": "^12.6.4",
+    "react": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  }
+}

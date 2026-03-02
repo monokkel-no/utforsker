@@ -1,0 +1,35 @@
+{
+  "name": "@repo/ui-components",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./*": "./src/*/index.ts"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:tcm": "tcm src --watch",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@vanilla-extract/css": "catalog:",
+    "npm-run-all": "catalog:",
+    "tsx": "catalog:",
+    "typed-css-modules": "^0.9.1",
+    "typescript": "catalog:",
+    "csstype": "catalog:"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "modern-normalize": "^2.0.0",
+    "@mui/material": "^7.3.4",
+    "@repo/ui-theme": "workspace:*",
+    "react-resizable-panels": "^4.6.5",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.552.0",
+    "react": "catalog:"
+  }
+}

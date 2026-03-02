@@ -1,0 +1,24 @@
+{
+  "name": "@repo/course-browser",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
+  },
+  "dependencies": {
+    "@repo/ui-components": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  }
+}

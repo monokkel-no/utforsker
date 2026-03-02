@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/typescript-config/react-library.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}

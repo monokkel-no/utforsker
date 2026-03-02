@@ -1,0 +1,29 @@
+{
+  "name": "@repo/ui-theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*.css": "./dest/*.css",
+    "./css-variables": "./dest/css-variables.ts",
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production tsx src/build.ts --clear-screen=false",
+    "dev": "tsx watch src/build.ts --clear-screen=false",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "csstype": "catalog:"
+  },
+  "dependencies": {
+    "@fontsource-variable/roboto-flex": "^5.2.8",
+    "@repo/utils": "workspace:*",
+    "colorizr": "^3.0.8",
+    "react": "catalog:"
+  }
+}

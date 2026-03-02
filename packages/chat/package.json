@@ -1,0 +1,33 @@
+{
+  "name": "@repo/chat",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@huggingface/inference": "^4.13.14",
+    "@repo/ui-components": "workspace:*",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.33",
+    "openai": "^6.22.0",
+    "react": "catalog:",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "@vanilla-extract/css": "catalog:",
+    "@repo/ui-theme": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  }
+}
