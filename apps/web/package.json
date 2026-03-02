@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@repo/chat": "workspace:*",
-    "@repo/file-editor": "workspace:*",
+    "@repo/core": "workspace:*",
     "@repo/course-browser": "workspace:*",
+    "@repo/file-editor": "workspace:*",
+    "@repo/games": "workspace:*",
     "@repo/knowledge-graph": "workspace:*",
     "@repo/ui-components": "workspace:*",
     "@repo/ui-theme": "workspace:*",
@@ -25,8 +27,7 @@
     "dotenv": "^17.3.1",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "vite-tsconfig-paths": "^5.1.4",
-    "@repo/core": "workspace:*"
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
     "@tanstack/devtools-vite": "^0.3.11",
@@ -36,10 +37,10 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "^5.0.4",
+    "favicons": "^7.2.0",
     "jsdom": "^27.0.0",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "^3.0.5",
-    "favicons": "^7.2.0"
+    "vitest": "^3.0.5"
   }
 }
