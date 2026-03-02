@@ -30,16 +30,9 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Show build output
-        run: |
-          echo "=== apps/web top-level ==="
-          ls -la apps/web/
-          echo "=== Searching for output dirs ==="
-          find apps/web -maxdepth 4 -type d \( -name ".output" -o -name "dist" -o -name ".netlify" \) 2>/dev/null || echo "none found"
-
       - name: Deploy to Netlify
         working-directory: apps/web
-        run: pnpm --package=netlify-cli dlx netlify deploy --prod --dir ${{ github.workspace }}/apps/web/.output/public --functions ${{ github.workspace }}/apps/web/.output/server
+        run: pnpm --package=netlify-cli dlx netlify deploy --prod --dir ${{ github.workspace }}/apps/web/dist/client --functions ${{ github.workspace }}/apps/web/dist/server
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
