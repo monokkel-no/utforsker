@@ -6,6 +6,24 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { ReactNode } from "react";
 import { faviconLinks, faviconMeta } from "virtual:favicons";
 
+const RootDocument = ({ children }: { children: ReactNode }) => (
+  <html lang="en">
+    <head>
+      <HeadContent />
+    </head>
+    <body className="repo-light-theme">
+      <ThemeProvider>
+        <UIProvider>{children}</UIProvider>
+      </ThemeProvider>
+      <TanStackDevtools
+        config={{ position: "bottom-right" }}
+        plugins={[{ name: "Tanstack Router", render: <TanStackRouterDevtoolsPanel /> }]}
+      />
+      <Scripts />
+    </body>
+  </html>
+);
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -18,23 +36,3 @@ export const Route = createRootRoute({
   }),
   shellComponent: RootDocument,
 });
-
-function RootDocument({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body className="repo-light-theme">
-        <ThemeProvider>
-          <UIProvider>{children}</UIProvider>
-        </ThemeProvider>
-        <TanStackDevtools
-          config={{ position: "bottom-right" }}
-          plugins={[{ name: "Tanstack Router", render: <TanStackRouterDevtoolsPanel /> }]}
-        />
-        <Scripts />
-      </body>
-    </html>
-  );
-}

@@ -17,3 +17,6 @@ pnpm-debug.log*
 
 # Private notes
 notes/
+
+# Claude
+.claude/settings.local.json

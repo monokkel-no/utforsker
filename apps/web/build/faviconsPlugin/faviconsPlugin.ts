@@ -8,8 +8,8 @@ const source = Buffer.from(logoSvg, "utf8");
 
 const outDir = path.resolve(__dirname, "../../public/favicons");
 
-const VIRTUAL_ID = "virtual:favicons";
-const RESOLVED_ID = "\0virtual:favicons";
+const virtualId = "virtual:favicons";
+const resolvedId = "\0virtual:favicons";
 
 interface ParsedHtmlTags {
   links: Record<string, string>[];
@@ -65,12 +65,12 @@ export const faviconsPlugin = (): Plugin => {
     },
 
     resolveId(id) {
-      if (id !== VIRTUAL_ID) return;
-      return RESOLVED_ID;
+      if (id !== virtualId) return;
+      return resolvedId;
     },
 
     load(id) {
-      if (id !== RESOLVED_ID) return;
+      if (id !== resolvedId) return;
       return `export const faviconLinks = ${JSON.stringify(faviconLinks)};
 export const faviconMeta = ${JSON.stringify(faviconMeta)};`;
     },
