@@ -1,0 +1,15 @@
+{
+  "ignore": ["./apps/web/src/routeTree.gen.ts"],
+  "workspaces": {
+    "apps/web": {
+      "entry": ["src/router.tsx", "src/routes/**/*.{ts,tsx}"],
+      "ignoreDependencies": ["@tanstack/router-plugin"]
+    },
+    "packages/course-browser": {
+      "ignoreDependencies": ["@types/react"]
+    },
+    "packages/ui-components": {
+      "ignoreDependencies": ["tsx"]
+    }
+  }
+}
