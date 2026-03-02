@@ -30,6 +30,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Mark server bundle as ESM
+        run: echo '{"type":"module"}' > apps/web/dist/server/package.json
+
       - name: Deploy to Netlify
         working-directory: apps/web
         run: pnpm --package=netlify-cli dlx netlify deploy --prod --dir ${{ github.workspace }}/apps/web/dist/client --functions ${{ github.workspace }}/apps/web/dist/server
