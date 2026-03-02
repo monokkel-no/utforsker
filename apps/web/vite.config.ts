@@ -23,7 +23,7 @@ const config = defineConfig({
     viteTsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
-    tanstackStart(),
+    tanstackStart({ server: { preset: "netlify" } }),
     viteReact(),
     vanillaExtractPlugin(),
     faviconsPlugin(),
